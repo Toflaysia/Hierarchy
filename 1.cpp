@@ -30,13 +30,13 @@ class Doctor: private Medical_officer{
     int cabinet_number;
 };
 
-class Nurse: private Medical_officer {
+class Nurse: private Medical_officer {  //медсестра
     string education;
-    string post;
+    string post;                        //должность
 };
 
-class Staff : private Medical_officer {
-    string post;
+class Staff : private Medical_officer { //работники
+    string post;                        //должность
 };
 
 class Patient:private Human {
@@ -82,18 +82,18 @@ public:
     }
 };
 
-class Department {
-    int floors;
-    int offices;
-    int* ID_equipment;
-    int* ID_employees;
+class Department {                         //отделение
+    int floors;           
+    int offices;          
+    vector<int> ID_equipment;              //массивы с айди оборудованием
+    vector<Medical_officer> employees;     //массивы с работниками
     vector<Patient> patients;
 };
 
 class Hospital {
-    vector<Department> departments;
+    vector<Department> departments;        //массив отделений
     string adress;
-    string get_adress() {
+    string get_adress() {                  //метод 
         return adress;
     }
 };
